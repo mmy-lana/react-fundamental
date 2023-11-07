@@ -7,9 +7,9 @@ function Homepage() {
   const [posts, setPosts] = useState(postsData);
   const [totalPosts, setTotalPosts] = useState(0);
   const onSearchChange = (value) => {
-    console.log(value);
+    const searchLowerCase = value.toLowerCase();
     const filteredPosts = postsData.filter((item) =>
-      item.title.includes(value)
+      item.title.toLowerCase().includes(searchLowerCase)
     );
     setPosts(filteredPosts);
     setTotalPosts(filteredPosts.length);
